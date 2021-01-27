@@ -1,8 +1,8 @@
-// Saves options to chrome.storage
+// Saves options to browser.storage
 function save_options() {
   var session_active = document.getElementById('session_active').value;
   var is_active = document.getElementById('is_active').checked;
-  chrome.storage.sync.set({
+  browser.storage.sync.set({
     sessionActive: session_active,
     isActive: is_active
   }, function() {
@@ -16,10 +16,10 @@ function save_options() {
 }
 
 // Restores select box and checkbox state using the preferences
-// stored in chrome.storage.
+// stored in browser.storage.
 function restore_options() {
   // Use default value color = 'red' and likesColor = true.
-  chrome.storage.sync.get({
+  browser.storage.sync.get({
     sessionActive: 'Hiver 2021',
     isActive: true
   }, function(items) {
